@@ -719,7 +719,7 @@ The availability of specific nutrients and serving details depends on the select
 
 ## 👩‍💻 Author and Connect
 
-### **Keerthi Thokala**
+                       **### **Keerthi Thokala****
 
 🎓 B.Tech — Artificial Intelligence & Machine Learning
 
