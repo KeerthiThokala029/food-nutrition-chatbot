@@ -725,11 +725,11 @@ The availability of specific nutrients and serving details depends on the select
 
 ### 🔗 Connect With Me
 
--GitHub:
+**GitHub:**
 
 https://github.com/KeerthiThokala029
 
-Project Repository:
+**Project Repository:**
 
 https://github.com/KeerthiThokala029/food-nutrition-chatbot
 
