@@ -43,20 +43,19 @@ The application combines food search, spelling correction, and quantity-based an
 
 The main interface for interacting with NutriBot.
 
-![NutriBot Dashboard](results/Dashboard.png)
-
-### 🥗 Full Nutrition Details
-
-A detailed view of the nutrition information returned by the application.
-
-![Full Nutrition Details](results/Full%20Details.png)
+![NutriBot Dashboard](results/screenshots/Dashboard.png)
 
 ### 📊 Nutrition Results
 
 An example of the application's nutrition analysis output.
 
-![Nutrition Results](results/Nutrition%20Results.png)
+![Nutrition Results](results/screenshots/Nutrition%20Results.pngNutrition%20Results.png)
 
+### 🥗 Full Nutrition Details
+
+A detailed view of the nutrition information returned by the application.
+
+![Full Nutrition Details](results/screenshots/Full%20Details.png)
 ## ⚙️ How It Works
 
 ```text
