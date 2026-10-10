@@ -717,9 +717,9 @@ The availability of specific nutrients and serving details depends on the select
 
 ---
 
-## ## 👩‍💻 Author and Connect
+## 👩‍💻 Author and Connect
 
-                       **### **Keerthi Thokala****
+### **Keerthi Thokala**
 
 🎓 B.Tech — Artificial Intelligence & Machine Learning
 
@@ -728,11 +728,11 @@ The availability of specific nutrients and serving details depends on the select
 
 **GitHub:**
 
-(https://github.com/KeerthiThokala029)
+[https://github.com/KeerthiThokala029](https://github.com/KeerthiThokala029)
 
 **Project Repository:**
 
-(https://github.com/KeerthiThokala029/food-nutrition-chatbot)
+[https://github.com/KeerthiThokala029/food-nutrition-chatbot](https://github.com/KeerthiThokala029/food-nutrition-chatbot)
 
 ---
 
