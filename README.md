@@ -258,8 +258,6 @@ Queries such as `500 mg food` also contain a quantity and unit, but meaningful n
 
 ### 🧮 Nutrition Calculation
 
-### 🧮 Nutrition Calculation
-
 When a food record provides nutrient values per 100 grams, NutriBot calculates the nutrient amount for the requested quantity using the following formula:
 
 **Formula:**
