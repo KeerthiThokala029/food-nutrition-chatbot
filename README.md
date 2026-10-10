@@ -1,8 +1,19 @@
 # 🥗 NutriBot — Food Nutrition Chatbot Using NLP
 
-**From everyday food queries to meaningful nutrition insights.**
+**Understand what's in your food, one query at a time.**
 
-NutriBot is a Python-based food nutrition chatbot that combines Natural Language Processing (NLP), food matching, quantity-based calculations, and USDA FoodData Central to help users explore nutritional information through an interactive dashboard.
+NutriBot is an interactive food nutrition chatbot built using Python, Natural Language Processing (NLP), and Streamlit. It helps users explore nutritional information by entering food names and supported quantity-based queries.
+
+By integrating USDA FoodData Central, NutriBot searches food records, evaluates potential matches, retrieves available nutrient information, and presents results through an interactive dashboard.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.12">
+  <img src="https://img.shields.io/badge/Streamlit-Interactive%20Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit">
+  <img src="https://img.shields.io/badge/NLP-Food%20Query%20Processing-805AD5?style=for-the-badge" alt="NLP">
+  <img src="https://img.shields.io/badge/Data-USDA%20FoodData%20Central-228B22?style=for-the-badge" alt="USDA FoodData Central">
+</p>
+
+> **Project focus:** Transforming everyday food queries into structured nutrition information through text processing, food matching, database retrieval, and quantity-based calculations.
 
 ---
 
@@ -18,6 +29,7 @@ NutriBot is a Python-based food nutrition chatbot that combines Natural Language
 - [🛡️ Safe Handling of Unknown Foods](#️-safe-handling-of-unknown-foods)
 - [🏗️ System Architecture](#️-system-architecture)
 - [⚙️ Methodology](#️-methodology)
+- [📊 Results and Visualization](#-results-and-visualization)
 - [📸 Application Screenshots](#-application-screenshots)
 - [🛠️ Technology Stack](#️-technology-stack)
 - [📂 Project Structure](#-project-structure)
@@ -35,86 +47,87 @@ NutriBot is a Python-based food nutrition chatbot that combines Natural Language
 
 NutriBot is designed to make food nutrition information easier to access and understand.
 
-Users can enter food-related queries through the dashboard. The application processes the input, attempts to identify the food and requested quantity, searches the USDA FoodData Central database, and presents the available nutritional information.
+Users can enter food names and supported food-related queries through the dashboard. The application processes the input, attempts to identify the requested food and quantity, searches USDA FoodData Central, and presents the available nutritional information.
 
-Instead of relying solely on a predefined list of foods, NutriBot uses an external nutrition database and food-matching logic to identify suitable records for supported queries.
+Unlike a system that relies entirely on a small, predefined list of foods, NutriBot uses an external nutrition database and food-matching logic to search for relevant food records.
 
-The project brings together text processing, food identification, API communication, nutrition calculations, and response generation in a single interactive application.
+The project combines NLP techniques, spelling-error handling, food identification, API communication, nutrition calculations, and response generation in a single application.
 
 ## 🎯 Project Objectives
 
-- Develop an interactive chatbot for food nutrition queries.
-- Process supported food inputs using NLP techniques.
-- Retrieve food and nutrient information from USDA FoodData Central.
-- Improve food identification through text similarity and spelling-error handling.
-- Interpret supported quantities and serving descriptions.
-- Calculate nutrition values based on the selected food record.
-- Handle unmatched foods without inventing nutrition information.
-- Present nutrition results through a user-friendly dashboard.
+The main objectives of NutriBot are:
+
+- Develop an interactive chatbot for exploring food nutrition information.
+- Process supported food-related queries using NLP techniques.
+- Retrieve food and nutrient records from USDA FoodData Central.
+- Improve food identification through text similarity and spelling recovery.
+- Interpret supported quantities, units, and serving descriptions.
+- Calculate nutrient amounts for compatible quantities and nutrition bases.
+- Reduce incorrect food selections through candidate ranking.
+- Handle unknown foods without presenting fabricated nutrition values.
+- Display nutrition results through a user-friendly dashboard.
 
 ## ✨ Key Features
 
 ### 💬 Natural Language Food Queries
 
-Accepts supported food-related inputs in a simple, conversational format.
+Allows users to enter supported food-related queries in a simple, conversational format.
 
 ### 🔍 Dynamic Food Search
 
-Uses USDA FoodData Central to search food records rather than depending entirely on a fixed food list.
+Uses USDA FoodData Central to search available food records instead of depending exclusively on a fixed food list.
 
 ### ✏️ Spelling-Error Handling
 
-Uses text normalization and spelling-recovery techniques to help identify intended food names when possible.
+Uses text normalization and algorithmic spelling-recovery strategies to help identify intended food names when possible.
 
 ### ⚖️ Quantity and Portion Processing
 
-Attempts to identify quantities, units, and serving information for supported query formats.
+Attempts to identify food quantities, measurement units, and supported portion information.
 
 ### 🧮 Nutrition Calculation
 
-Scales available nutrient values according to the requested quantity when the required data and unit conversions are supported.
+Scales available nutrient values according to a requested quantity when the selected record and conversion logic support the calculation.
 
 ### 🏆 Food Matching and Ranking
 
-Evaluates food candidates using text similarity, food descriptions, data types, and other matching criteria.
+Evaluates candidate food records using text similarity, descriptions, data type priority, and other implemented selection criteria.
 
 ### 🛡️ Unknown-Food Handling
 
-Avoids presenting fabricated nutrition values when a sufficiently reliable food match cannot be established.
+Supports a safer nutrition lookup approach by avoiding unsupported nutrition values when a reliable match cannot be identified.
 
 ### 🖥️ Interactive Dashboard
 
-Displays the application's nutrition results and detailed food information through Streamlit.
+Provides a Streamlit interface for entering queries and viewing nutrition results and available food details.
 
 ---
 
 ## 🖥️ Dashboard Workflow
 
-The dashboard is the main interface through which users interact with NutriBot. When a user submits a food query, the application processes it through several stages before displaying the result.
+The dashboard is the main interface through which users interact with NutriBot. When a user submits a food query, the application processes the input through multiple stages before displaying the result.
 
-The example below illustrates the intended workflow for a query such as `I ate 200g banana`.
+The following example illustrates the intended processing flow for the query `I ate 200g banana`.
 
 ### 1️⃣ User Input
 
-The user enters a food-related query in the dashboard.
-
-Example:
+The user enters a food-related query through the dashboard.
 
 ```text
 I ate 200g banana
 ```
 
-The input may contain a food name, a quantity, a unit, and additional words describing the request.
+The input can contain a food name, a quantity, a unit, and additional words describing the request.
 
 ### 2️⃣ Text Normalization
 
-The application cleans and normalizes the input to make subsequent text processing more consistent.
+The application cleans and normalizes the input to make subsequent processing and text matching more consistent.
 
-This may involve trimming unnecessary whitespace and normalizing text for matching.
+For example, unnecessary whitespace can be removed and text can be normalized for comparison.
 
 ### 3️⃣ Spelling Recovery
 
-The food-matching process attempts to recover from common spelling errors.
+The application attempts to recover from common spelling errors using its text-processing and food-matching logic.
 
 Example:
 
@@ -122,11 +135,11 @@ Example:
 chickwn → chicken
 ```
 
-Spelling recovery is algorithmic and does not guarantee a correct result for every misspelling. The resulting candidates still need to be evaluated.
+Spelling recovery is an attempt to improve the search query, not a guarantee that every misspelling will be corrected.
 
 ### 4️⃣ Food Extraction
 
-The application identifies the food name that should be used for the nutrition lookup.
+The application identifies the food name needed for the nutrition lookup.
 
 Example:
 
@@ -134,11 +147,9 @@ Example:
 banana
 ```
 
-The extracted food becomes the search term for the next stage.
-
 ### 5️⃣ Quantity Extraction
 
-The application attempts to identify the amount requested by the user.
+The application attempts to identify the requested amount.
 
 Example:
 
@@ -146,11 +157,11 @@ Example:
 200
 ```
 
-This value is interpreted together with the detected unit and food information.
+The extracted quantity must be interpreted alongside its unit.
 
 ### 6️⃣ Unit Detection
 
-The application identifies the unit associated with the quantity.
+The application attempts to identify the measurement unit associated with the quantity.
 
 Example:
 
@@ -158,59 +169,57 @@ Example:
 g
 ```
 
-The quantity and unit together represent the requested amount:
+Together, the extracted quantity and unit represent a request for 200 grams of banana.
+
+### 7️⃣ Intent Processing
+
+The application processes the query to determine the requested food-related operation, where supported.
+
+For this example, the intended operation is nutrition lookup.
 
 ```text
-200 g of banana
-```
-
-### 7️⃣ Intent Detection
-
-The query-processing logic determines the type of food-related operation requested, where supported.
-
-For the example query, the intended operation is nutrition lookup.
-
-```text
-Intent: nutrition
+nutrition
 ```
 
 ### 8️⃣ USDA Food Retrieval
 
-The application searches USDA FoodData Central using the extracted food name.
+The extracted food name is searched through the USDA FoodData Central API.
 
-The API may return multiple candidate records. NutriBot evaluates the available candidates rather than automatically assuming that the first result is always the best match.
+The API may return multiple candidate food records. The first result is not necessarily the most suitable match.
 
-### 9️⃣ Food Selection and Nutrient Extraction
+### 9️⃣ Food Matching and Selection
 
-The matching logic selects a suitable food record when possible. The nutrition database module then retrieves detailed information and extracts available nutrient values.
+The matching logic evaluates available candidates and attempts to select a suitable record.
 
-The selected record may differ depending on its description, preparation method, data type, and similarity to the requested food.
+Factors can include food-description similarity, data type priority, and whether the record appropriately represents the requested food.
 
-### 🔟 Nutrition Calculation
+### 🔟 Nutrient Extraction and Calculation
 
-When the requested quantity and the selected food's nutrition basis are compatible, the application scales nutrient values to the requested amount.
+The application retrieves available nutrient values from the selected food record.
 
-For example, if a record provides nutrient values per 100 g, a calculation for 200 g can use a scaling factor of:
+When the requested quantity and the record's nutrition basis are compatible, the application scales the nutrient values to the requested amount.
+
+For example, if a nutrient is reported per 100 g, the scaling factor for 200 g is:
 
 \[
 \text{Scaling factor}=\frac{200}{100}=2
 \]
 
-Each available nutrient value is multiplied by this factor, provided the record and calculation logic support that basis.
+The calculation uses the actual nutrient values from the selected record.
 
 ### 1️⃣1️⃣ Response Generation
 
-The response-generation component formats the processed information for the dashboard.
+The response-generation component formats the processed information for display.
 
-The result can include available nutrition values, calculated amounts, and relevant food details.
+The dashboard presents the available nutrition results and food details. If a reliable match cannot be established, the application should avoid confidently presenting an unrelated food as the requested food.
 
-If a reliable match cannot be established, the application should avoid presenting an unrelated food as a confident match.
+The exact behavior depends on the query, API results, and the implemented processing logic.
 
 ---
 
 ## 🥗 Nutrition Information
 
-NutriBot extracts available nutrient information from the selected USDA food record. The exact nutrients displayed depend on the data returned by the API and the application's supported output.
+NutriBot extracts available nutrient information from the selected USDA food record.
 
 | Nutrient | Unit |
 |---|---|
@@ -225,11 +234,17 @@ NutriBot extracts available nutrient information from the selected USDA food rec
 | 🧂 Sodium | mg |
 | 🍊 Vitamin C | mg |
 
-**Note:** This table describes important nutrients of interest; it does not guarantee that every nutrient is present for every food record. The application should use the units and values supplied by the selected record.
+The nutrients available can vary between food records. This list describes important nutrients of interest and does not guarantee that every record contains every listed nutrient.
+
+The application should preserve the units and values supplied by the selected record and avoid treating missing nutrient values as zero unless that behavior is explicitly supported by the data and calculation logic.
+
+---
 
 ## ⚖️ Quantity and Serving Support
 
-Users may enter food queries in formats such as:
+NutriBot is designed to process supported food queries that include quantities or portions.
+
+Example query formats:
 
 ```text
 100g banana
@@ -239,11 +254,11 @@ Users may enter food queries in formats such as:
 1 serving
 ```
 
-Inputs such as `500 mg food` also contain a quantity and unit, but meaningful nutrition calculations depend on whether the unit can be interpreted appropriately for the selected food.
+Queries such as `500 mg food` also contain a quantity and unit, but meaningful nutrition calculations depend on whether the unit can be interpreted appropriately for the selected food.
 
-### 🧮 How Quantity-Based Calculation Works
+### 🧮 Nutrition Calculation
 
-When the nutrition basis is expressed per 100 g, the calculation can be represented as:
+When a food record provides a nutrient value per 100 grams, the calculation can be represented as:
 
 \[
 \text{Nutrient amount}
@@ -253,36 +268,35 @@ When the nutrition basis is expressed per 100 g, the calculation can be represen
 \frac{\text{Requested grams}}{100}
 \]
 
-For example, if a selected record contains 10 g of a nutrient per 100 g, then a supported calculation for 200 g gives:
+For example, if a selected record provides 10 g of a nutrient per 100 g, the illustrative calculation for 200 g is:
 
 \[
 10\times\frac{200}{100}=20\text{ g}
 \]
 
-This is an illustrative calculation, not a measured nutrition value for a particular food.
+This is an example of the calculation method, not a measured nutrition value for a particular food.
 
-For serving-based inputs, the application needs suitable serving-weight information or another supported conversion method. It should not assume that every serving has the same weight.
+### 📏 Unit and Serving Considerations
 
-### 📏 Unit and Portion Considerations
+- Weight units must be converted consistently before calculation.
+- Serving-based quantities require suitable serving-weight information.
+- Food records can use different nutrient bases.
+- Ambiguous quantities may require further clarification.
+- Unsupported conversions can prevent a reliable calculation.
 
-- Weight units must be converted consistently before scaling nutrition values.
-- Serving-based quantities require an appropriate serving definition.
-- Food records may use different nutrient bases.
-- Unsupported or ambiguous quantities can lead to uncertain calculations.
-
-The accuracy of the result depends on correct food matching, quantity interpretation, and the nutrition data available for the selected record.
+The result depends on correct food matching, quantity interpretation, and the nutrition data available for the selected record.
 
 ---
 
 ## 🔎 Food Matching and Ranking
 
-USDA FoodData Central can return multiple possible records for the same search term. For this reason, NutriBot uses food-matching and ranking logic to help select a suitable candidate.
+USDA FoodData Central may return multiple records for the same search term. NutriBot uses food-matching and ranking logic to help identify a relevant record instead of automatically accepting the first API result.
 
 ### 🏆 Candidate Evaluation
 
-The matching process can consider:
+The implemented matching logic can consider:
 
-- Text similarity between the query and food description
+- Text similarity between the user query and food description
 - Similarity after spelling normalization
 - Whether the food description starts with the requested name
 - USDA data type priority
@@ -290,32 +304,45 @@ The matching process can consider:
 - Preparation-related terms
 - A minimum similarity threshold
 
-The final choice depends on the implemented scoring rules and the candidates returned by the API.
+The selected record depends on the actual scoring rules and the candidates returned by the API.
 
-### 🍗 Why Ranking Matters
+### 🍗 Example: Selecting a Suitable Food
 
-Consider a generic query:
+Consider the query:
 
 ```text
 User: chicken
 ```
 
-A food database might contain records describing plain chicken, prepared chicken dishes, and branded chicken products.
+The database may return records for plain chicken, prepared chicken dishes, and branded products.
 
-The system should favor a record that appropriately represents the user's query rather than selecting a record simply because it contains the word “chicken.”
+For a generic query, a record representing plain chicken may be more appropriate than an unrelated specialized product.
 
-For a generic food query, a plain, relevant food record may be more appropriate than a specialized product. However, the best choice also depends on what the user actually means—for example, raw chicken and cooked chicken do not have identical nutrition profiles.
+However, the intended preparation matters. Raw chicken and cooked chicken can have different nutrient profiles, so the selected record should reflect what the user intends to describe.
 
-### ✏️ Spelling Recovery Is Not Final Selection
+### 🔍 Why the First Match Is Not Always Correct
 
-Spelling recovery and food ranking serve different purposes:
+A food description can contain the requested keyword without being an appropriate match.
 
-1. Spelling recovery attempts to generate a more useful search query.
-2. USDA search retrieves candidate records.
-3. Matching logic evaluates the candidates.
-4. The selected record supplies the nutrition data.
+For example, a query for a generic food might return:
 
-This separation helps prevent a spelling correction from being treated as proof that the correct food has been found.
+```text
+Chicken
+Chicken spread
+Chicken kiev
+Chicken-flavored snack
+```
+
+The matching system should evaluate the full descriptions and other relevant criteria rather than treating every partial text match as correct.
+
+### ✏️ Spelling Recovery and Ranking Are Different
+
+The process has two distinct purposes:
+
+1. **Spelling recovery:** Attempts to generate a more useful search query.
+2. **Food ranking:** Evaluates the retrieved candidates to select a suitable record.
+
+Correcting a spelling error does not prove that the selected food is correct. The retrieved records must still be evaluated.
 
 ---
 
@@ -323,13 +350,13 @@ This separation helps prevent a spelling correction from being treated as proof 
 
 Nutrition information should be based on a suitable food record rather than invented values.
 
-For an input such as:
+For example, consider an input such as:
 
 ```text
 xyzabc food
 ```
 
-If the application cannot identify a sufficiently reliable match, the appropriate behavior is to report that nutrition information could not be found and ask the user to try a different description.
+If the application cannot identify a sufficiently reliable match, it should inform the user that nutrition information could not be found.
 
 Example response:
 
@@ -341,102 +368,172 @@ Please try another food name or provide a more
 specific description.
 ```
 
-This example illustrates the desired behavior; the exact wording depends on the application's response-generation implementation.
+This illustrates the intended behavior; the exact message depends on the application's response-generation implementation.
 
 ### 🔐 Why This Matters
 
-- Prevents unsupported nutrition values from being presented as facts.
-- Reduces the risk of selecting unrelated food records.
-- Encourages more specific queries when the input is ambiguous.
-- Keeps retrieved data separate from estimated or unavailable information.
+- Reduces the risk of displaying nutrition values for unrelated foods.
+- Separates retrieved nutrition information from unsupported assumptions.
+- Encourages more specific food descriptions when a query is ambiguous.
+- Makes the limitations of the lookup process clearer to users.
 
-A similarity score alone does not establish that a match is nutritionally appropriate. The food description and the requested preparation or portion should also be considered.
+A similarity score alone does not guarantee that a food match is nutritionally appropriate.
 
 ---
 
 ## 🏗️ System Architecture
 
-The architecture describes the main components that work together to process a query and produce a nutrition response.
+The system architecture represents the main components involved in processing a food query, retrieving nutrition data, calculating nutrient values, and presenting the response.
 
 ![NutriBot System Architecture](docs/images/system-architecture.png)
 
-### 🧩 Main Components
+### 🧩 Architecture Components
 
 **1. Streamlit Dashboard**
 
-Collects user input and displays the resulting nutrition information.
+Accepts user queries and displays nutrition results.
 
 **2. Chatbot Module**
 
-Coordinates the application's query-processing and response workflow.
+Coordinates the query-processing and response workflow.
 
 **3. NLP Processor**
 
-Handles supported natural-language input processing.
+Processes supported natural-language input.
 
 **4. Food Matcher**
 
-Evaluates candidate food descriptions and helps select an appropriate record.
+Evaluates food candidates and helps select a relevant record.
 
-**5. Nutrition Database**
+**5. Nutrition Database Module**
 
-Communicates with USDA FoodData Central to search for foods and retrieve detailed nutrition data.
+Communicates with USDA FoodData Central to search for foods and retrieve detailed nutrition information.
 
 **6. Portion Resolver**
 
-Handles supported quantity and portion interpretation.
+Handles supported quantity and serving interpretation.
 
 **7. Nutrition Calculator**
 
-Calculates nutrition amounts from the selected record when the quantity and nutrition basis are compatible.
+Calculates nutrient amounts for supported quantities and compatible nutrition bases.
 
 **8. Response Generator**
 
-Formats the available nutrition information for presentation.
+Formats the processed information for presentation through the dashboard.
+
+The exact execution path depends on the query and the application's implementation.
 
 ---
 
 ## ⚙️ Methodology
 
-NutriBot organizes the nutrition lookup process into a sequence of stages.
+NutriBot follows a series of processing stages to transform a food query into a nutrition response.
 
-| Stage | Operation | Purpose |
-|---|---|---|
-| 1 | Input collection | Accept a food-related query |
-| 2 | Text normalization | Prepare text for processing |
-| 3 | Spelling recovery | Attempt to handle spelling errors |
-| 4 | Food extraction | Identify the food search term |
-| 5 | Quantity and unit processing | Interpret supported amounts |
-| 6 | Intent processing | Determine the requested operation |
-| 7 | API search | Retrieve candidate food records |
-| 8 | Food ranking | Evaluate possible matches |
-| 9 | Nutrient extraction | Retrieve available nutrient values |
-| 10 | Nutrition calculation | Scale values for supported quantities |
-| 11 | Response generation | Present the result in the dashboard |
+### 📝 Input Collection
 
-The exact execution order and behavior depend on the application's implementation. Some stages may be combined or handled by the same module.
+The user enters a food name or supported food-related query.
+
+### 🧹 Text Processing
+
+The input is normalized and prepared for subsequent processing.
+
+### ✏️ Spelling Recovery
+
+The application attempts to handle common spelling errors using generic text-processing techniques.
+
+### 🔍 Food Identification
+
+The application identifies the food search term and queries the external nutrition database.
+
+### ⚖️ Quantity Processing
+
+Supported amounts, units, and serving descriptions are interpreted.
+
+### 🌐 Nutrition Data Retrieval
+
+USDA FoodData Central returns candidate records and, when requested, detailed nutrition information.
+
+### 🏆 Candidate Ranking
+
+The food-matching logic evaluates candidate descriptions and selects a suitable record when possible.
+
+### 🧪 Nutrient Extraction
+
+Available nutrient values and units are extracted from the selected food record.
+
+### 🧮 Nutrition Calculation
+
+The application calculates nutrient amounts for supported quantities when the necessary data and conversions are available.
+
+### 💬 Response Generation
+
+The processed information is formatted and presented through the Streamlit dashboard.
+
+---
+
+## 📊 Results and Visualization
+
+The results interface presents nutritional information retrieved and processed by NutriBot. The exact values depend on the selected food record, the requested quantity, and the nutrient information available.
+
+### 🥗 Nutrition Metric Analysis
+
+The application can present available nutrition metrics, including:
+
+- Energy and calories
+- Protein
+- Carbohydrates
+- Total fat
+- Fiber
+- Sugar
+- Minerals and vitamins where available
+
+Not every food record contains the same nutrient information.
+
+### ⚖️ Quantity-Based Analysis
+
+For supported queries, NutriBot uses the interpreted quantity and the selected record's nutrition basis to calculate nutrient amounts.
+
+The calculation should use compatible units and a suitable reference amount. Serving-based calculations additionally require appropriate serving information.
+
+### 🔍 Food Matching Results
+
+The food-matching process evaluates candidate records using the application's text-similarity and selection logic.
+
+Spelling recovery may help with mistyped food names, but it cannot guarantee that every input will produce a correct match.
+
+### 📋 Result Interpretation
+
+Nutrition results should be interpreted in the context of:
+
+- The selected food record
+- The preparation method and description
+- The requested quantity or portion
+- The units and nutrient basis
+- The availability of nutrient data
+
+The displayed information is intended for general nutrition exploration and is not a substitute for professional medical or dietary advice.
 
 ---
 
 ## 📸 Application Screenshots
 
-The following screenshots illustrate the main views of NutriBot.
+The following screenshots illustrate the main interface and nutrition information views.
 
 ### 🏠 Dashboard
 
-The main interface for entering food queries and interacting with the chatbot.
+The Dashboard provides the main interface for entering food queries and interacting with the chatbot.
 
 ![NutriBot Dashboard](results/screenshots/Dashboard.png)
 
 ### 📊 Nutrition Results
 
-An example of the nutrition information displayed for a selected food.
+The Nutrition Results view presents an example of the nutrition information returned by the application.
 
 ![Nutrition Results](results/screenshots/Nutrition%20Results.png)
 
 ### 🥗 Full Nutrition Details
 
-A detailed view of the available nutrition information for a selected food record.
+The Full Nutrition Details view presents the available nutritional information for a selected food.
 
 ![Full Nutrition Details](results/screenshots/Full%20Details.png)
 
@@ -449,8 +546,8 @@ A detailed view of the available nutrition information for a selected food recor
 | 🐍 Python | Core application logic |
 | 🖥️ Streamlit | Interactive dashboard |
 | 🧠 NLP techniques | Food-query processing |
-| 🌐 USDA FoodData Central API | Food and nutrient retrieval |
-| 🔗 Requests | HTTP API communication |
+| 🌐 USDA FoodData Central API | Food and nutrient data retrieval |
+| 🔗 Requests | HTTP communication |
 | 🔐 python-dotenv | Environment variable configuration |
 | 🔎 RapidFuzz | Text similarity and matching |
 
@@ -474,7 +571,6 @@ food-nutrition-chatbot/
 ├── test_nlp.py
 ├── requirements.txt
 ├── RUN_NUTRIBOT.bat
-├── .env
 ├── .gitignore
 ├── README.md
 ├── docs/
@@ -487,7 +583,7 @@ food-nutrition-chatbot/
         └── Full Details.png
 ```
 
-**Important:** `.env` contains your private API key and should not be committed to GitHub. The directory listing above illustrates the local development setup; the private `.env` file should be excluded from the public repository.
+The local `.env` file contains the private USDA API key and should be excluded from the public repository through `.gitignore`.
 
 ---
 
@@ -495,10 +591,12 @@ food-nutrition-chatbot/
 
 ### 📋 Prerequisites
 
-- Python 3.12 or another compatible Python version
+Before running NutriBot, ensure you have:
+
+- Python 3.12 or a compatible version
 - Git
 - A USDA FoodData Central API key
-- Internet access for API requests
+- An internet connection for API requests
 
 ### 1️⃣ Clone the Repository
 
@@ -513,7 +611,7 @@ cd food-nutrition-chatbot
 python -m venv venv
 ```
 
-Activate it on Windows using PowerShell:
+Activate the environment on Windows:
 
 ```powershell
 venv\Scripts\activate
@@ -527,15 +625,15 @@ pip install -r requirements.txt
 
 ### 4️⃣ Configure the API Key
 
-Create a `.env` file in the project's root directory:
+Create a `.env` file in the project root directory:
 
 ```env
 USDA_API_KEY=your_api_key_here
 ```
 
-Get an API key and review the API documentation at the [USDA FoodData Central API Guide](https://fdc.nal.usda.gov/api-guide/).
+Get an API key and review the documentation at the [USDA FoodData Central API Guide](https://fdc.nal.usda.gov/api-guide/).
 
-Replace the placeholder with your own key. Do not share your real API key or commit the `.env` file.
+Replace the placeholder with your own key. Do not share your actual API key or commit the `.env` file to GitHub.
 
 ---
 
@@ -547,19 +645,19 @@ Activate your virtual environment and run:
 streamlit run app.py
 ```
 
-Alternatively, on Windows, run:
+Alternatively, on Windows, launch:
 
 ```text
 RUN_NUTRIBOT.bat
 ```
 
-Open the local URL shown in the terminal to access the NutriBot dashboard.
+Streamlit will display a local URL in the terminal. Open that URL in your browser to use the NutriBot dashboard.
 
 ---
 
 ## 🧪 Testing
 
-NutriBot includes test scripts for checking individual components.
+The project includes test scripts for checking different components.
 
 | Test File | Purpose |
 |---|---|
@@ -567,35 +665,37 @@ NutriBot includes test scripts for checking individual components.
 | `test_matcher.py` | Food-matching checks |
 | `test_nlp.py` | NLP processing checks |
 
-For example, run the food matcher test with:
+For example, run:
 
 ```bash
 python test_matcher.py
 ```
 
-Run the tests from the project directory with the virtual environment activated. API-related tests may require a working internet connection and a valid API key.
+Run tests from the project directory with the virtual environment activated. API-related tests may require internet access and a valid API key.
 
 ---
 
 ## ⚠️ Limitations
 
-- The available nutrition information depends on USDA FoodData Central records.
-- Not all food records provide every nutrient listed in this README.
-- Spelling recovery and similarity-based matching cannot guarantee a correct match for every query.
-- Raw, cooked, branded, and prepared foods may have different nutrient profiles.
-- Quantity calculations depend on supported units and a compatible nutrition basis.
-- Serving-based calculations require suitable serving information.
-- Live API searches require internet access and valid API configuration.
+- Results depend on the food records available through USDA FoodData Central.
+- Not every food record provides every nutrient listed in this README.
+- Spelling recovery and text-similarity matching cannot guarantee a correct match for every query.
+- Raw, cooked, branded, and prepared foods may have different nutrition profiles.
+- Quantity calculations depend on correct input interpretation and compatible units.
+- Serving-based calculations require suitable serving-weight information.
+- API searches require internet access and valid API configuration.
 - Nutrition information should not be treated as medical advice.
+
+---
 
 ## 🔮 Future Enhancements
 
-Possible improvements include:
+Potential improvements include:
 
 - 📈 Interactive nutrition charts
 - 🍽️ Meal-wise nutrition summaries
 - 🗓️ Daily food and nutrition history
-- 🧠 More robust food-name and intent recognition
+- 🧠 Improved food-name and intent recognition
 - ⚖️ Expanded serving and unit conversion support
 - 🔍 Better handling of ambiguous food matches
 - 📱 Improved mobile dashboard layout
@@ -607,7 +707,9 @@ Possible improvements include:
 
 NutriBot uses **[USDA FoodData Central](https://fdc.nal.usda.gov/)** as its external food and nutrition data source.
 
-The API supplies food records and nutrient information. NutriBot uses its food-search and nutrition-processing logic to select records and present the information returned by the database.
+The API supplies food records and nutrient information. NutriBot uses its search, matching, and nutrition-processing logic to select records and present the information returned by the database.
+
+The availability of specific nutrients and serving details depends on the selected food record.
 
 ---
 
