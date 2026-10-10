@@ -719,25 +719,27 @@ The availability of specific nutrients and serving details depends on the select
 
 ## 👩‍💻 Author and Connect
 
-### **Keerthi Thokala**
+<div align="center">
 
-🎓 B.Tech — Artificial Intelligence & Machine Learning
+### Keerthi Thokala
+
+🎓 B.Tech(AI&ML) Student
 
 
 ### 🔗 Connect With Me
 
-**GitHub:**
+**GitHub**
 
-[https://github.com/KeerthiThokala029](https://github.com/KeerthiThokala029)
+[KeerthiThokala029](https://github.com/KeerthiThokala029)
 
-**Project Repository:**
+**Project Repository**
 
-[https://github.com/KeerthiThokala029/food-nutrition-chatbot](https://github.com/KeerthiThokala029/food-nutrition-chatbot)
+[food-nutrition-chatbot](https://github.com/KeerthiThokala029/food-nutrition-chatbot)
 
 ---
 
-<p align="center">
-  <strong>🥗 NutriBot</strong>
-  <br>
-  <em>Making food nutrition information easier to explore, one query at a time.</em>
-</p>
+**🥗 NutriBot**
+
+*Making food nutrition information easier to explore, one query at a time.*
+
+</div>
