@@ -719,9 +719,9 @@ The availability of specific nutrients and serving details depends on the select
 
 ## 👩‍💻 Author and Connect
 
-<h3 align="center">Keerthi Thokala!</h3>
+<h2 align="center">Keerthi Thokala!</h2>
 
-🎓 B.Tech(AI&ML) Student
+<h3 align="center">🎓 B.Tech(AI&ML) Student</h3>
 
 ### 🔗 Connect With Me
 
