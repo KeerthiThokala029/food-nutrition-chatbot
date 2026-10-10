@@ -721,7 +721,7 @@ The availability of specific nutrients and serving details depends on the select
 
 <h2 align="center">Keerthi Thokala!</h2>
 
-<h3 align="center">🎓 B.Tech(AI&ML) Student</h3>
+<h4 align="center">🎓 B.Tech(AI&ML) Student</h4>
 
 ### 🔗 Connect With Me
 
