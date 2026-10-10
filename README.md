@@ -5,131 +5,104 @@
 </p>
 
 <p align="center">
-  ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
-  ![Streamlit](https://img.shields.io/badge/Streamlit-App-red?logo=streamlit)
-  ![USDA](https://img.shields.io/badge/Data-USDA%20FoodData%20Central-green)
+  <img src="https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Streamlit-Web%20App-red?logo=streamlit&logoColor=white" alt="Streamlit">
+  <img src="https://img.shields.io/badge/NLP-Query%20Processing-purple" alt="NLP">
+  <img src="https://img.shields.io/badge/Data-USDA%20FoodData%20Central-green" alt="USDA FoodData Central">
 </p>
 
-## 📌 About the Project
+## 📌 About NutriBot
 
-NutriBot is a food nutrition chatbot developed using Python, Natural Language Processing (NLP), and Streamlit. It allows users to enter food-related queries in natural language and retrieve nutritional information through the USDA FoodData Central API.
+**NutriBot** is a food nutrition chatbot developed using Python, Natural Language Processing (NLP), and Streamlit. It allows users to enter food names and food-related questions in natural language and explore nutritional information.
 
-The application combines food search, spelling correction, and quantity-based analysis for supported inputs in a simple, interactive interface.
+The application connects to the **USDA FoodData Central API** to retrieve food records and provide nutrition information. It also includes food matching, spelling-error handling, and quantity-based analysis for supported inputs.
 
 ## 📑 Table of Contents
 
-- [✨ Features](#-features)
-- [📸 Application Screenshots](#-application-screenshots)
-- [⚙️ How It Works](#️-how-it-works)
-- [🛠️ Technology Stack](#️-technology-stack)
-- [🚀 Installation and Setup](#-installation-and-setup)
-- [📂 Project Structure](#-project-structure)
-- [🔮 Future Enhancements](#-future-enhancements)
-- [📚 Data Source](#-data-source)
-- [👩‍💻 Author](#-author)
+- [Features](#-features)
+- [Application Screenshots](#-application-screenshots)
+- [Example Queries](#-example-queries)
+- [How It Works](#️-how-it-works)
+- [Technology Stack](#️-technology-stack)
+- [Project Structure](#-project-structure)
+- [Installation and Setup](#-installation-and-setup)
+- [Testing](#-testing)
+- [Future Enhancements](#-future-enhancements)
+- [Data Source](#-data-source)
+- [Author](#️-author)
 
 ## ✨ Features
 
-- 💬 **Natural Language Queries** — process everyday food-related questions.
-- 🔍 **Food Search** — find relevant food records using the USDA API.
-- ✏️ **Spelling Correction** — handle common food-name typing errors.
-- 🥗 **Nutrition Analysis** — display calories, protein, carbohydrates, fats, and other available nutrients.
-- ⚖️ **Quantity-Based Analysis** — calculate nutrition for supported quantities and portions.
-- 🖥️ **Interactive Interface** — explore nutrition information through Streamlit.
+- **Natural Language Queries:** Enter food-related questions using everyday language.
+- **Food Search:** Search food records through USDA FoodData Central.
+- **Spelling Error Handling:** Attempt to handle common typing mistakes in food names.
+- **Nutrition Analysis:** Retrieve calories, protein, carbohydrates, fats, and other available nutrients.
+- **Quantity-Based Analysis:** Calculate nutrition for supported quantities and portions.
+- **Interactive Interface:** Explore nutrition information through a Streamlit web application.
 
 ## 📸 Application Screenshots
 
-### 🏠 Dashboard
+### 🏠 1. NutriBot Dashboard
 
-The main interface for interacting with NutriBot.
+The main interface for entering food queries and interacting with the chatbot.
 
 ![NutriBot Dashboard](results/screenshots/Dashboard.png)
 
-### 📊 Nutrition Results
+### 🥗 2. Full Nutrition Details
 
-An example of the application's nutrition analysis output.
-
-![Nutrition Results](results/screenshots/Nutrition%20Results.pngNutrition%20Results.png)
-
-### 🥗 Full Nutrition Details
-
-A detailed view of the nutrition information returned by the application.
+A detailed view of the nutritional information returned for a selected food.
 
 ![Full Nutrition Details](results/screenshots/Full%20Details.png)
+
+### 📊 3. Nutrition Results
+
+An example of the nutrition analysis displayed by the application.
+
+![Nutrition Results](results/screenshots/Nutrition%20Results.png)
+
+## 💬 Example Queries
+
+| User Query | Purpose |
+|---|---|
+| `chicken` | Search for a matching food record |
+| `2 bananas` | Analyze a supported food quantity |
+| `I ate 150 grams of chicken` | Request nutrition for a specified quantity |
+| `How much protein is in chicken?` | Ask about a specific nutrient |
+| `brocolli` | Test spelling-error handling |
+
+Actual results depend on the selected food record, available USDA data, and the application's supported quantity handling.
+
 ## ⚙️ How It Works
 
 ```text
-💬 User Query
-     ↓
-🧠 NLP Processing
-     ↓
-🔍 Food and Quantity Matching
-     ↓
-🌐 USDA FoodData Central API
-     ↓
-🧮 Nutrition Processing
-     ↓
-📊 Chatbot Response
+User Food Query
+       |
+       v
+NLP Processing
+       |
+       v
+Food and Quantity Matching
+       |
+       v
+USDA FoodData Central API
+       |
+       v
+Nutrition Data Processing
+       |
+       v
+Chatbot Response
 ```
 
 ## 🛠️ Technology Stack
 
 | Technology | Purpose |
 |---|---|
-| 🐍 Python | Application logic |
-| 🎨 Streamlit | Web interface |
-| 🧠 NLP | Query processing |
-| 🌐 USDA FoodData Central API | Nutrition data retrieval |
-| 🔗 Requests | API communication |
-| 🔐 python-dotenv | Environment configuration |
-
-## 🚀 Installation and Setup
-
-### Prerequisites
-
-- Python 3.12 or a compatible version
-- Git
-- USDA FoodData Central API key
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/KeerthiThokala029/food-nutrition-chatbot.git
-cd food-nutrition-chatbot
-```
-
-### 2. Create a virtual environment
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure the API key
-
-Create a `.env` file in the project root:
-
-```env
-USDA_API_KEY=your_api_key_here
-```
-
-Get your API key from the [USDA FoodData Central API Guide](https://fdc.nal.usda.gov/api-guide/).
-
-🔒 Keep your API key private. Do not upload your `.env` file to GitHub.
-
-### 5. Run the application
-
-```bash
-streamlit run app.py
-```
-
-Alternatively, launch `RUN_NUTRIBOT.bat` on Windows.
+| Python | Core application logic |
+| Streamlit | Web interface |
+| NLP | Natural-language query processing |
+| USDA FoodData Central API | Nutrition data retrieval |
+| Requests | API communication |
+| python-dotenv | Environment variable management |
 
 ## 📂 Project Structure
 
@@ -150,22 +123,87 @@ food-nutrition-chatbot/
 ├── requirements.txt
 ├── RUN_NUTRIBOT.bat
 ├── results/
-│   ├── Dashboard.png
-│   ├── Full Details.png
-│   └── Nutrition Results.png
+│   └── screenshots/
+│       ├── Dashboard.png
+│       ├── Full Details.png
+│       └── Nutrition Results.png
 └── README.md
 ```
 
+## 🚀 Installation and Setup
+
+### 📋 Prerequisites
+
+- Python 3.12 or a compatible version
+- Git
+- A USDA FoodData Central API key
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/KeerthiThokala029/food-nutrition-chatbot.git
+cd food-nutrition-chatbot
+```
+
+### 2. Create a Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+Activate the environment on Windows:
+
+```powershell
+venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure the API Key
+
+Create a `.env` file in the project root and add your own API key:
+
+```env
+USDA_API_KEY=your_api_key_here
+```
+
+Get an API key from the [USDA FoodData Central API Guide](https://fdc.nal.usda.gov/api-guide/).
+
+**Security:** Keep your actual API key private. Do not commit your `.env` file to GitHub.
+
+### 5. Run the Application
+
+```bash
+streamlit run app.py
+```
+
+On Windows, you can also start the application using `RUN_NUTRIBOT.bat`.
+
+## 🧪 Testing
+
+The project includes the following test files:
+
+- `test_api.py` — API-related checks
+- `test_matcher.py` — food-matching checks
+- `test_nlp.py` — NLP processing checks
+
+Run the relevant test files from your activated virtual environment.
+
 ## 🔮 Future Enhancements
 
-- 📅 Meal-wise nutrition summaries
-- 📈 Nutrition history and visualizations
-- 🔎 Improved food matching
-- ☁️ Online deployment
+- Meal-wise nutrition summaries
+- Nutrition history and visualizations
+- Improved food recognition and matching
+- Additional user-interface improvements
+- Online deployment
 
 ## 📚 Data Source
 
-Nutrition information is retrieved from [USDA FoodData Central](https://fdc.nal.usda.gov/).
+Nutrition data is retrieved from [USDA FoodData Central](https://fdc.nal.usda.gov/).
 
 ## 👩‍💻 Author
 
@@ -176,6 +214,6 @@ Nutrition information is retrieved from [USDA FoodData Central](https://fdc.nal.
 ---
 
 <p align="center">
-  🥗 <strong>NutriBot</strong><br>
-  <em>Making nutrition information easier to explore.</em>
+  <strong>🥗 NutriBot</strong><br>
+  <em>Making nutrition information easier to explore, one query at a time.</em>
 </p>
