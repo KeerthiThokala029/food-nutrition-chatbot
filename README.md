@@ -258,23 +258,29 @@ Queries such as `500 mg food` also contain a quantity and unit, but meaningful n
 
 ### 🧮 Nutrition Calculation
 
-When a food record provides a nutrient value per 100 grams, the calculation can be represented as:
+### 🧮 Nutrition Calculation
 
-\[
-\text{Nutrient amount}
-=
-\text{Nutrient per 100 g}
-\times
-\frac{\text{Requested grams}}{100}
-\]
+When a food record provides nutrient values per 100 grams, NutriBot calculates the nutrient amount for the requested quantity using the following formula:
 
-For example, if a selected record provides 10 g of a nutrient per 100 g, the illustrative calculation for 200 g is:
+**Formula:**
 
-\[
-10\times\frac{200}{100}=20\text{ g}
-\]
+```text
+Nutrient Amount = (Nutrient per 100 g × Requested Weight in g) / 100
+```
 
-This is an example of the calculation method, not a measured nutrition value for a particular food.
+**Example: Calculating nutrition for 200 g**
+
+Suppose a selected food record provides 10 g of a nutrient per 100 g.
+
+```text
+Nutrient Amount = (10 × 200) / 100
+                = 20 g
+```
+
+Therefore, the calculated amount is **20 g of that nutrient for 200 g of food**.
+
+*This is an illustrative calculation, not a measured nutrition value for a particular food.*
+
 
 ### 📏 Unit and Serving Considerations
 
