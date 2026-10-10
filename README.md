@@ -725,8 +725,13 @@ The availability of specific nutrients and serving details depends on the select
 
 ### 🔗 Connect With Me
 
-- **GitHub Profile:** [Keerthi Thokala](https://github.com/KeerthiThokala029)
-- **Project Repository:** [NutriBot — Food Nutrition Chatbot Using NLP](https://github.com/KeerthiThokala029/food-nutrition-chatbot)
+-GitHub:
+
+https://github.com/KeerthiThokala029
+
+Project Repository:
+
+https://github.com/KeerthiThokala029/food-nutrition-chatbot
 
 ---
 
