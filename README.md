@@ -728,11 +728,11 @@ The availability of specific nutrients and serving details depends on the select
 
 **GitHub:**
 
-[https://github.com/KeerthiThokala029](https://github.com/KeerthiThokala029)
+(https://github.com/KeerthiThokala029)
 
 **Project Repository:**
 
-[https://github.com/KeerthiThokala029/food-nutrition-chatbot](https://github.com/KeerthiThokala029/food-nutrition-chatbot)
+(https://github.com/KeerthiThokala029/food-nutrition-chatbot)
 
 ---
 
